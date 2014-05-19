@@ -1,0 +1,538 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05EBF029C45F4167A7FD0FFD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6977D7CAF5224F518ABB17F6 /* libPods.a */; };
+		3D854C081929A516001409B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D854C071929A516001409B4 /* Foundation.framework */; };
+		3D854C0A1929A516001409B4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D854C091929A516001409B4 /* CoreGraphics.framework */; };
+		3D854C0C1929A516001409B4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D854C0B1929A516001409B4 /* UIKit.framework */; };
+		3D854C121929A516001409B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D854C101929A516001409B4 /* InfoPlist.strings */; };
+		3D854C141929A516001409B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D854C131929A516001409B4 /* main.m */; };
+		3D854C181929A516001409B4 /* NTYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D854C171929A516001409B4 /* NTYAppDelegate.m */; };
+		3D854C1B1929A516001409B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D854C191929A516001409B4 /* Main.storyboard */; };
+		3D854C1E1929A516001409B4 /* NTYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D854C1D1929A516001409B4 /* NTYViewController.m */; };
+		3D854C201929A516001409B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D854C1F1929A516001409B4 /* Images.xcassets */; };
+		3D854C271929A516001409B4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D854C261929A516001409B4 /* XCTest.framework */; };
+		3D854C281929A516001409B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D854C071929A516001409B4 /* Foundation.framework */; };
+		3D854C291929A516001409B4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D854C0B1929A516001409B4 /* UIKit.framework */; };
+		3D854C311929A516001409B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D854C2F1929A516001409B4 /* InfoPlist.strings */; };
+		3D854C331929A517001409B4 /* NTYAirDataDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D854C321929A517001409B4 /* NTYAirDataDemoTests.m */; };
+		3DAAAF861929A97600FBCE68 /* seeds in Resources */ = {isa = PBXBuildFile; fileRef = 3DAAAF851929A97600FBCE68 /* seeds */; };
+		3DAAAF891929A9A600FBCE68 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3DAAAF871929A9A600FBCE68 /* Model.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3D854C2A1929A516001409B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D854BFC1929A516001409B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D854C031929A516001409B4;
+			remoteInfo = NTYAirDataDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3D854C041929A516001409B4 /* NTYAirDataDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NTYAirDataDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D854C071929A516001409B4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3D854C091929A516001409B4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3D854C0B1929A516001409B4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3D854C0F1929A516001409B4 /* NTYAirDataDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NTYAirDataDemo-Info.plist"; sourceTree = "<group>"; };
+		3D854C111929A516001409B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3D854C131929A516001409B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3D854C151929A516001409B4 /* NTYAirDataDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NTYAirDataDemo-Prefix.pch"; sourceTree = "<group>"; };
+		3D854C161929A516001409B4 /* NTYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTYAppDelegate.h; sourceTree = "<group>"; };
+		3D854C171929A516001409B4 /* NTYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTYAppDelegate.m; sourceTree = "<group>"; };
+		3D854C1A1929A516001409B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3D854C1C1929A516001409B4 /* NTYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTYViewController.h; sourceTree = "<group>"; };
+		3D854C1D1929A516001409B4 /* NTYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTYViewController.m; sourceTree = "<group>"; };
+		3D854C1F1929A516001409B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3D854C251929A516001409B4 /* NTYAirDataDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NTYAirDataDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D854C261929A516001409B4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3D854C2E1929A516001409B4 /* NTYAirDataDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NTYAirDataDemoTests-Info.plist"; sourceTree = "<group>"; };
+		3D854C301929A516001409B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3D854C321929A517001409B4 /* NTYAirDataDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTYAirDataDemoTests.m; sourceTree = "<group>"; };
+		3DAAAF851929A97600FBCE68 /* seeds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = seeds; sourceTree = "<group>"; };
+		3DAAAF881929A9A600FBCE68 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		6977D7CAF5224F518ABB17F6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9A4B333611F486EA15D2CD4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3D854C011929A516001409B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D854C0A1929A516001409B4 /* CoreGraphics.framework in Frameworks */,
+				3D854C0C1929A516001409B4 /* UIKit.framework in Frameworks */,
+				3D854C081929A516001409B4 /* Foundation.framework in Frameworks */,
+				05EBF029C45F4167A7FD0FFD /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D854C221929A516001409B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D854C271929A516001409B4 /* XCTest.framework in Frameworks */,
+				3D854C291929A516001409B4 /* UIKit.framework in Frameworks */,
+				3D854C281929A516001409B4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D854BFB1929A516001409B4 = {
+			isa = PBXGroup;
+			children = (
+				3D854C0D1929A516001409B4 /* NTYAirDataDemo */,
+				3D854C2C1929A516001409B4 /* NTYAirDataDemoTests */,
+				3D854C061929A516001409B4 /* Frameworks */,
+				3D854C051929A516001409B4 /* Products */,
+				D9A4B333611F486EA15D2CD4 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		3D854C051929A516001409B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D854C041929A516001409B4 /* NTYAirDataDemo.app */,
+				3D854C251929A516001409B4 /* NTYAirDataDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3D854C061929A516001409B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D854C071929A516001409B4 /* Foundation.framework */,
+				3D854C091929A516001409B4 /* CoreGraphics.framework */,
+				3D854C0B1929A516001409B4 /* UIKit.framework */,
+				3D854C261929A516001409B4 /* XCTest.framework */,
+				6977D7CAF5224F518ABB17F6 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3D854C0D1929A516001409B4 /* NTYAirDataDemo */ = {
+			isa = PBXGroup;
+			children = (
+				3D854C191929A516001409B4 /* Main.storyboard */,
+				3DAAAF871929A9A600FBCE68 /* Model.xcdatamodeld */,
+				3D854C161929A516001409B4 /* NTYAppDelegate.h */,
+				3D854C171929A516001409B4 /* NTYAppDelegate.m */,
+				3D854C1C1929A516001409B4 /* NTYViewController.h */,
+				3D854C1D1929A516001409B4 /* NTYViewController.m */,
+				3D854C1F1929A516001409B4 /* Images.xcassets */,
+				3D854C0E1929A516001409B4 /* Supporting Files */,
+			);
+			path = NTYAirDataDemo;
+			sourceTree = "<group>";
+		};
+		3D854C0E1929A516001409B4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DAAAF851929A97600FBCE68 /* seeds */,
+				3D854C0F1929A516001409B4 /* NTYAirDataDemo-Info.plist */,
+				3D854C101929A516001409B4 /* InfoPlist.strings */,
+				3D854C131929A516001409B4 /* main.m */,
+				3D854C151929A516001409B4 /* NTYAirDataDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3D854C2C1929A516001409B4 /* NTYAirDataDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				3D854C321929A517001409B4 /* NTYAirDataDemoTests.m */,
+				3D854C2D1929A516001409B4 /* Supporting Files */,
+			);
+			path = NTYAirDataDemoTests;
+			sourceTree = "<group>";
+		};
+		3D854C2D1929A516001409B4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3D854C2E1929A516001409B4 /* NTYAirDataDemoTests-Info.plist */,
+				3D854C2F1929A516001409B4 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3D854C031929A516001409B4 /* NTYAirDataDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D854C361929A517001409B4 /* Build configuration list for PBXNativeTarget "NTYAirDataDemo" */;
+			buildPhases = (
+				F8685622DA8444F2A33CDC31 /* Check Pods Manifest.lock */,
+				3D854C001929A516001409B4 /* Sources */,
+				3D854C011929A516001409B4 /* Frameworks */,
+				3D854C021929A516001409B4 /* Resources */,
+				6AF49CD14EF64132AABF91F0 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NTYAirDataDemo;
+			productName = NTYAirDataDemo;
+			productReference = 3D854C041929A516001409B4 /* NTYAirDataDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3D854C241929A516001409B4 /* NTYAirDataDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D854C391929A517001409B4 /* Build configuration list for PBXNativeTarget "NTYAirDataDemoTests" */;
+			buildPhases = (
+				3D854C211929A516001409B4 /* Sources */,
+				3D854C221929A516001409B4 /* Frameworks */,
+				3D854C231929A516001409B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D854C2B1929A516001409B4 /* PBXTargetDependency */,
+			);
+			name = NTYAirDataDemoTests;
+			productName = NTYAirDataDemoTests;
+			productReference = 3D854C251929A516001409B4 /* NTYAirDataDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3D854BFC1929A516001409B4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = NTY;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Naoto Kaneko";
+				TargetAttributes = {
+					3D854C241929A516001409B4 = {
+						TestTargetID = 3D854C031929A516001409B4;
+					};
+				};
+			};
+			buildConfigurationList = 3D854BFF1929A516001409B4 /* Build configuration list for PBXProject "NTYAirDataDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3D854BFB1929A516001409B4;
+			productRefGroup = 3D854C051929A516001409B4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3D854C031929A516001409B4 /* NTYAirDataDemo */,
+				3D854C241929A516001409B4 /* NTYAirDataDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3D854C021929A516001409B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D854C201929A516001409B4 /* Images.xcassets in Resources */,
+				3DAAAF861929A97600FBCE68 /* seeds in Resources */,
+				3D854C121929A516001409B4 /* InfoPlist.strings in Resources */,
+				3D854C1B1929A516001409B4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D854C231929A516001409B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D854C311929A516001409B4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6AF49CD14EF64132AABF91F0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8685622DA8444F2A33CDC31 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D854C001929A516001409B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D854C181929A516001409B4 /* NTYAppDelegate.m in Sources */,
+				3D854C1E1929A516001409B4 /* NTYViewController.m in Sources */,
+				3D854C141929A516001409B4 /* main.m in Sources */,
+				3DAAAF891929A9A600FBCE68 /* Model.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D854C211929A516001409B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D854C331929A517001409B4 /* NTYAirDataDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3D854C2B1929A516001409B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D854C031929A516001409B4 /* NTYAirDataDemo */;
+			targetProxy = 3D854C2A1929A516001409B4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3D854C101929A516001409B4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D854C111929A516001409B4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3D854C191929A516001409B4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D854C1A1929A516001409B4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3D854C2F1929A516001409B4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D854C301929A516001409B4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3D854C341929A517001409B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3D854C351929A517001409B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3D854C371929A517001409B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9A4B333611F486EA15D2CD4 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NTYAirDataDemo/NTYAirDataDemo-Prefix.pch";
+				INFOPLIST_FILE = "NTYAirDataDemo/NTYAirDataDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3D854C381929A517001409B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9A4B333611F486EA15D2CD4 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NTYAirDataDemo/NTYAirDataDemo-Prefix.pch";
+				INFOPLIST_FILE = "NTYAirDataDemo/NTYAirDataDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3D854C3A1929A517001409B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NTYAirDataDemo.app/NTYAirDataDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NTYAirDataDemo/NTYAirDataDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "NTYAirDataDemoTests/NTYAirDataDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3D854C3B1929A517001409B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NTYAirDataDemo.app/NTYAirDataDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NTYAirDataDemo/NTYAirDataDemo-Prefix.pch";
+				INFOPLIST_FILE = "NTYAirDataDemoTests/NTYAirDataDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D854BFF1929A516001409B4 /* Build configuration list for PBXProject "NTYAirDataDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D854C341929A517001409B4 /* Debug */,
+				3D854C351929A517001409B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D854C361929A517001409B4 /* Build configuration list for PBXNativeTarget "NTYAirDataDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D854C371929A517001409B4 /* Debug */,
+				3D854C381929A517001409B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D854C391929A517001409B4 /* Build configuration list for PBXNativeTarget "NTYAirDataDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D854C3A1929A517001409B4 /* Debug */,
+				3D854C3B1929A517001409B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3DAAAF871929A9A600FBCE68 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3DAAAF881929A9A600FBCE68 /* Model.xcdatamodel */,
+			);
+			currentVersion = 3DAAAF881929A9A600FBCE68 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3D854BFC1929A516001409B4 /* Project object */;
+}

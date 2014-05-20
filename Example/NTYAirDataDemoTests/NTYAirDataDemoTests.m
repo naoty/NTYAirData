@@ -28,15 +28,15 @@
 {
     [super setUp];
     
-    self.dataServer = [[NTYAirDataServer alloc] initWithManagedObjectContext:self.managedObjectContext
-                                                          managedObjectModel:self.managedObjectModel];
+    self.dataServer = [[NTYAirDataServer alloc] initWithManagedObjectContext:self.managedObjectContext];
+    [self.dataServer addResource:[NTYResourceDescription resourceForEntityName:@"User" resourceKey:@"name"]];
     [self.dataServer startWithPort:5678];
     self.manager = [AFHTTPRequestOperationManager manager];
 }
 
 - (void)tearDown
 {
-    [self.dataServer stop];
+//    [self.dataServer stop];
     
     [super tearDown];
 }
@@ -48,6 +48,22 @@
         success = YES;
         RESUME;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        success = NO;
+        RESUME;
+    }];
+    
+    WAIT;
+    XCTAssertTrue(success, @"");
+}
+
+- (void)testGetObject
+{
+    __block BOOL success;
+    [self.manager GET:@"http://localhost:5678/users/Alice.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        success = YES;
+        RESUME;
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"error: %@", error);
         success = NO;
         RESUME;
     }];

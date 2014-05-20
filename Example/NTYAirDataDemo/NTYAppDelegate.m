@@ -8,7 +8,7 @@
 
 #import "NTYAppDelegate.h"
 #import "NTYPopulator.h"
-#import "NTYAirDataServer.h"
+#import "NTYAirData.h"
 
 @interface NTYAppDelegate ()
 @property (nonatomic) NSManagedObjectContext *managedObjectContext;
@@ -23,8 +23,8 @@
 {
     [[NTYPopulator new] run];
     
-    NTYAirDataServer *dataServer = [[NTYAirDataServer alloc] initWithManagedObjectContext:self.managedObjectContext
-                                                                       managedObjectModel:self.managedObjectModel];
+    NTYAirDataServer *dataServer = [[NTYAirDataServer alloc] initWithManagedObjectContext:self.managedObjectContext];
+    [dataServer addResource:[NTYResourceDescription resourceForEntityName:@"User" resourceKey:@"name"]];
     [dataServer start];
     
     return YES;

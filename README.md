@@ -15,43 +15,52 @@ pod "NTYAirData"
 ## Usage
 
 ```objective-c
-AIRDataServer *server = [[AIRDataServer alloc] initWithManagedObjectContext:context managedObjectModel:model];
+NTYAirDataServer *server = [[NTYAirDataServer alloc] initWithManagedObjectContext:context];
+[server addResource:[NTYResourceDescription resourceForEntityName:@"User" resourceKey:@"name"]];
+[server addResource:[NTYResourceDescription resourceForEntityName:@"Article" resourceKey:@"uid"]];
 [server start];
 ```
 
-By default, a HTTP server runs in your application at `80` port on devices or `8080` on simulators. You can change the port by `startWithPort:`.
+By default, a HTTP server runs in your application at `80` port on devices or `8080` port on simulators. You can change the port by `startWithPort:`.
+
+`NTYResourceDescription` describes a resource served by the server. `resourceKey` is used to identify a resource because objects managed by Core Data have no primary key.
 
 ### RESTful API
 
 The server has RESTful APIs for data managed by Core Data. If your application have `User` entity, the server will have below APIs.
 
 ```sh
-GET    /users     - get the collection of user objects
-GET    /users/:id - get an user object specified by :id
-POST   /users     - create a new user object
-PUT    /users/:id - update an user object specified by :id
-DELETE /users/:id - destroy an user object specified by :id
+GET    /users.json               - get the collection of user objects
+GET    /users/:resource_key.json - get an user object identified by :resource_key
+POST   /users.json               - create a new user object
+PUT    /users/:resource_key.json - update an user object identified by :resource_key
+DELETE /users/:resource_key.json - destroy an user object identified by :resource_key
 ```
 
 The server will response data in the format of JSON like below.
 
-```json
+```sh
+$ curl http://192.168.1.10/users.json
 [
   {
-    "id": 1,
-    "name": "Alice",
-    "age": 18
+    "age": 18,
+    "name": "Alice"
   },
   {
-    "id": 2,
-    "name": "Bob",
-    "age": 19
+    "age": 19,
+    "name": "Bob"
   },
   {
-    "id": 3,
-    "name": "Charlie",
-    "age": 20
+    "age": 20,
+    "name": "Charlie"
   }
 ]
 ```
 
+```sh
+$ curl http://192.168.1.10/users/Alice.json
+{
+  "age": 18,
+  "name": "Alice"
+}
+```

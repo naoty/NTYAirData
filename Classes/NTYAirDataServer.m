@@ -7,41 +7,42 @@
 //
 
 #import "NTYAirDataServer.h"
+#import "NTYResourceDescription.h"
+
 #import "GCDWebServer.h"
 #import "GCDWebServerDataResponse.h"
-#import "NSString+NTYSnakecase.h"
-#import "NSString+ActiveSupportInflector.h"
 #import "NSManagedObject+NTYJSON.h"
 
 @interface NTYAirDataServer ()
 @property (nonatomic) GCDWebServer *server;
 @property (nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic) NSManagedObjectModel *managedObjectModel;
 @end
 
 @implementation NTYAirDataServer
 
 - (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
-                          managedObjectModel:(NSManagedObjectModel *)managedObjectModel
 {
     self = [super init];
     if (self) {
         self.server = [GCDWebServer new];
         self.managedObjectContext = managedObjectContext;
-        self.managedObjectModel = managedObjectModel;
     }
     return self;
 }
 
+- (void)addResource:(NTYResourceDescription *)resource
+{
+    [self addHandlerToGetResources:resource];
+    [self addHandlerToGetResource:resource];
+}
+
 - (void)start
 {
-    [self setupHandlers];
     [self.server start];
 }
 
 - (void)startWithPort:(NSUInteger)port
 {
-    [self setupHandlers];
     [self.server startWithPort:port bonjourName:nil];
 }
 
@@ -52,21 +53,13 @@
 
 #pragma mark - Private methods
 
-- (void)setupHandlers
-{
-    for (NSEntityDescription *entity in self.managedObjectModel.entities) {
-        [self addHandlerToGetResourcesForEntity:entity];
-    }
-}
-
-- (void)addHandlerToGetResourcesForEntity:(NSEntityDescription *)entity
+- (void)addHandlerToGetResources:(NTYResourceDescription *)resource
 {
     __block NTYAirDataServer *weakSelf = self;
     
-    NSString *resourceName = entity.name.pluralizeString.snakecaseString;
-    NSString *path = [NSString stringWithFormat:@"/%@.json", resourceName];
+    NSString *path = [NSString stringWithFormat:@"/%@.json", resource.name];
     [self.server addHandlerForMethod:@"GET" path:path requestClass:[GCDWebServerRequest class] processBlock:^GCDWebServerResponse* (GCDWebServerRequest *request){
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:entity.name];
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:resource.entityName];
         NSArray *objects = [weakSelf.managedObjectContext executeFetchRequest:fetchRequest error:nil];
         
         NSMutableArray *JSONObjects = [NSMutableArray new];
@@ -75,6 +68,27 @@
         }
         
         return [GCDWebServerDataResponse responseWithJSONObject:JSONObjects];
+    }];
+}
+
+- (void)addHandlerToGetResource:(NTYResourceDescription *)resource
+{
+    __block NTYAirDataServer *weakSelf = self;
+    
+    NSString *path = [NSString stringWithFormat:@"/%@/.*\\.json", resource.name];
+    [self.server addHandlerForMethod:@"GET" pathRegex:path requestClass:[GCDWebServerRequest class] processBlock:^GCDWebServerResponse* (GCDWebServerRequest *request){
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:resource.entityName];
+        
+        NSString *valueForResourceKey = [request.path.lastPathComponent stringByDeletingPathExtension];
+        NSPredicate *predicate = [NSComparisonPredicate predicateWithLeftExpression:[NSExpression expressionForKeyPath:resource.resourceKey]
+                                                                    rightExpression:[NSExpression expressionForConstantValue:valueForResourceKey]
+                                                                           modifier:NSDirectPredicateModifier
+                                                                               type:NSEqualToPredicateOperatorType
+                                                                            options:0];
+        fetchRequest.predicate = predicate;
+        
+        NSManagedObject *object = [[weakSelf.managedObjectContext executeFetchRequest:fetchRequest error:nil] firstObject];
+        return [GCDWebServerDataResponse responseWithJSONObject:object.JSONObject ?: @{}];
     }];
 }
 

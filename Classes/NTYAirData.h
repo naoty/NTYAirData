@@ -7,4 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #import "NTYAirDataServer.h"
+#import "NTYResourceDescription.h"

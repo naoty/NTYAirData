@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class NTYResourceDescription;
+
 @interface NTYAirDataServer : NSObject
 
-- (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
-                          managedObjectModel:(NSManagedObjectModel *)managedObjectModel;
+- (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
+- (void)addResource:(NTYResourceDescription *)resource;
 
 - (void)start;
 - (void)startWithPort:(NSUInteger)port;

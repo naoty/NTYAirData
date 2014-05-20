@@ -26,8 +26,8 @@ By default, a HTTP server runs in your application at `80` port on devices or `8
 The server has RESTful APIs for data managed by Core Data. If your application have `User` entity, the server will have below APIs.
 
 ```sh
-GET    /users     - request the collection of user objects
-GET    /users/:id - request an user object specified by :id
+GET    /users     - get the collection of user objects
+GET    /users/:id - get an user object specified by :id
 POST   /users     - create a new user object
 PUT    /users/:id - update an user object specified by :id
 DELETE /users/:id - destroy an user object specified by :id

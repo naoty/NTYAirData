@@ -35,14 +35,29 @@
 
 - (void)start
 {
-    for (NSEntityDescription *entity in self.managedObjectModel.entities) {
-        [self addHandlerToGetResourcesForEntity:entity];
-    }
-    
+    [self setupHandlers];
     [self.server start];
 }
 
+- (void)startWithPort:(NSUInteger)port
+{
+    [self setupHandlers];
+    [self.server startWithPort:port bonjourName:nil];
+}
+
+- (void)stop
+{
+    [self.server stop];
+}
+
 #pragma mark - Private methods
+
+- (void)setupHandlers
+{
+    for (NSEntityDescription *entity in self.managedObjectModel.entities) {
+        [self addHandlerToGetResourcesForEntity:entity];
+    }
+}
 
 - (void)addHandlerToGetResourcesForEntity:(NSEntityDescription *)entity
 {

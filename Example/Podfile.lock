@@ -1,5 +1,24 @@
 PODS:
   - ActiveSupportInflector (0.0.1)
+  - AFNetworking (2.2.4):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+    - AFNetworking/UIKit
+  - AFNetworking/NSURLConnection (2.2.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.2.4):
+    - AFNetworking/NSURLConnection
+  - AFNetworking/Reachability (2.2.4)
+  - AFNetworking/Security (2.2.4)
+  - AFNetworking/Serialization (2.2.4)
+  - AFNetworking/UIKit (2.2.4):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
   - GCDWebServer (2.4):
     - GCDWebServer/Core
   - GCDWebServer/Core (2.4)
@@ -9,10 +28,13 @@ PODS:
   - NTYCSVTable (0.3.1)
   - NTYPopulator (0.2.0):
     - NTYCSVTable
+  - TKRGuard (1.0.2)
 
 DEPENDENCIES:
+  - AFNetworking
   - NTYAirData (from `../`)
   - NTYPopulator
+  - TKRGuard
 
 EXTERNAL SOURCES:
   NTYAirData:
@@ -20,9 +42,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   ActiveSupportInflector: 9930ef559210bd55ee941f72da2773d33d83344b
+  AFNetworking: 01aa7c3aa9a200b94943e54072a4373f14b3d219
   GCDWebServer: fb6eba9a0fb08455cd762b6c035a5068b8f4960b
   NTYAirData: 63b9b74e470d406fc863072c84f30129f209ccdc
   NTYCSVTable: 2b45da3ada267a63e75d66928d4b06ef57231309
   NTYPopulator: 3b4c80ae2b4a17602523ddacef41c7b806f016e5
+  TKRGuard: 2f31216eec4810f656ba191a8de418e845fecaa3
 
 COCOAPODS: 0.32.1

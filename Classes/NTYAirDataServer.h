@@ -13,6 +13,9 @@
 
 - (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
                           managedObjectModel:(NSManagedObjectModel *)managedObjectModel;
+
 - (void)start;
+- (void)startWithPort:(NSUInteger)port;
+- (void)stop;
 
 @end

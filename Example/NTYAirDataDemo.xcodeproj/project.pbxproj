@@ -24,6 +24,8 @@
 		3D854C331929A517001409B4 /* NTYAirDataDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D854C321929A517001409B4 /* NTYAirDataDemoTests.m */; };
 		3DAAAF861929A97600FBCE68 /* seeds in Resources */ = {isa = PBXBuildFile; fileRef = 3DAAAF851929A97600FBCE68 /* seeds */; };
 		3DAAAF891929A9A600FBCE68 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3DAAAF871929A9A600FBCE68 /* Model.xcdatamodeld */; };
+		3DB6A253192B81520027260A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6A251192B81520027260A /* Model.xcdatamodeld */; };
+		811B9C99CE3043B396494B60 /* libPods-NTYAirDataDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A6A27E0925D4F02A3F965CD /* libPods-NTYAirDataDemoTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A6A27E0925D4F02A3F965CD /* libPods-NTYAirDataDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NTYAirDataDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D854C041929A516001409B4 /* NTYAirDataDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NTYAirDataDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D854C071929A516001409B4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3D854C091929A516001409B4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,7 +61,9 @@
 		3D854C321929A517001409B4 /* NTYAirDataDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTYAirDataDemoTests.m; sourceTree = "<group>"; };
 		3DAAAF851929A97600FBCE68 /* seeds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = seeds; sourceTree = "<group>"; };
 		3DAAAF881929A9A600FBCE68 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		3DB6A252192B81520027260A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		6977D7CAF5224F518ABB17F6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A799D599E1D64A8FB53B0A00 /* Pods-NTYAirDataDemoTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTYAirDataDemoTests.xcconfig"; path = "Pods/Pods-NTYAirDataDemoTests.xcconfig"; sourceTree = "<group>"; };
 		D9A4B333611F486EA15D2CD4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +86,7 @@
 				3D854C271929A516001409B4 /* XCTest.framework in Frameworks */,
 				3D854C291929A516001409B4 /* UIKit.framework in Frameworks */,
 				3D854C281929A516001409B4 /* Foundation.framework in Frameworks */,
+				811B9C99CE3043B396494B60 /* libPods-NTYAirDataDemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +101,7 @@
 				3D854C061929A516001409B4 /* Frameworks */,
 				3D854C051929A516001409B4 /* Products */,
 				D9A4B333611F486EA15D2CD4 /* Pods.xcconfig */,
+				A799D599E1D64A8FB53B0A00 /* Pods-NTYAirDataDemoTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +122,7 @@
 				3D854C0B1929A516001409B4 /* UIKit.framework */,
 				3D854C261929A516001409B4 /* XCTest.framework */,
 				6977D7CAF5224F518ABB17F6 /* libPods.a */,
+				0A6A27E0925D4F02A3F965CD /* libPods-NTYAirDataDemoTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -150,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				3D854C321929A517001409B4 /* NTYAirDataDemoTests.m */,
+				3DB6A251192B81520027260A /* Model.xcdatamodeld */,
 				3D854C2D1929A516001409B4 /* Supporting Files */,
 			);
 			path = NTYAirDataDemoTests;
@@ -190,9 +199,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D854C391929A517001409B4 /* Build configuration list for PBXNativeTarget "NTYAirDataDemoTests" */;
 			buildPhases = (
+				C7675DE481994D6F9050C3FE /* Check Pods Manifest.lock */,
 				3D854C211929A516001409B4 /* Sources */,
 				3D854C221929A516001409B4 /* Frameworks */,
 				3D854C231929A516001409B4 /* Resources */,
+				34C2C2E2941140F090567B78 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -261,6 +272,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		34C2C2E2941140F090567B78 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-NTYAirDataDemoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6AF49CD14EF64132AABF91F0 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -274,6 +300,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7675DE481994D6F9050C3FE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F8685622DA8444F2A33CDC31 /* Check Pods Manifest.lock */ = {
@@ -310,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D854C331929A517001409B4 /* NTYAirDataDemoTests.m in Sources */,
+				3DB6A253192B81520027260A /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +493,7 @@
 		};
 		3D854C3A1929A517001409B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A799D599E1D64A8FB53B0A00 /* Pods-NTYAirDataDemoTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NTYAirDataDemo.app/NTYAirDataDemo";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -473,6 +516,7 @@
 		};
 		3D854C3B1929A517001409B4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A799D599E1D64A8FB53B0A00 /* Pods-NTYAirDataDemoTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NTYAirDataDemo.app/NTYAirDataDemo";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -528,6 +572,16 @@
 				3DAAAF881929A9A600FBCE68 /* Model.xcdatamodel */,
 			);
 			currentVersion = 3DAAAF881929A9A600FBCE68 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		3DB6A251192B81520027260A /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3DB6A252192B81520027260A /* Model.xcdatamodel */,
+			);
+			currentVersion = 3DB6A252192B81520027260A /* Model.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

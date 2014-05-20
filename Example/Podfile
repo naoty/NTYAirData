@@ -1,2 +1,7 @@
 pod "NTYAirData", :path => "../"
 pod "NTYPopulator"
+
+target "NTYAirDataDemoTests" do
+  pod "AFNetworking"
+  pod "TKRGuard"
+end

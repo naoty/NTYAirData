@@ -36,7 +36,7 @@
 
 - (void)tearDown
 {
-//    [self.dataServer stop];
+    [self.dataServer stop];
     
     [super tearDown];
 }
@@ -63,7 +63,23 @@
         success = YES;
         RESUME;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"error: %@", error);
+        success = NO;
+        RESUME;
+    }];
+    
+    WAIT;
+    XCTAssertTrue(success, @"");
+}
+
+- (void)testPostObject
+{
+    __block BOOL success;
+    
+    NSDictionary *parameters = @{@"name": @"New user", @"age": @20};
+    [self.manager POST:@"http://localhost:5678/users.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        success = YES;
+        RESUME;
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         success = NO;
         RESUME;
     }];

@@ -8,10 +8,12 @@
 
 #import "NTYAirDataServer.h"
 #import "NTYResourceDescription.h"
+#import "NSManagedObject+NTYJSON.h"
+#import "NSString+NTYCheck.h"
 
 #import "GCDWebServer.h"
+#import "GCDWebServerURLEncodedFormRequest.h"
 #import "GCDWebServerDataResponse.h"
-#import "NSManagedObject+NTYJSON.h"
 
 @interface NTYAirDataServer ()
 @property (nonatomic) GCDWebServer *server;
@@ -34,6 +36,7 @@
 {
     [self addHandlerToGetResources:resource];
     [self addHandlerToGetResource:resource];
+    [self addHandlerToPostResource:resource];
 }
 
 - (void)start
@@ -89,6 +92,37 @@
         
         NSManagedObject *object = [[weakSelf.managedObjectContext executeFetchRequest:fetchRequest error:nil] firstObject];
         return [GCDWebServerDataResponse responseWithJSONObject:object.JSONObject ?: @{}];
+    }];
+}
+
+- (void)addHandlerToPostResource:(NTYResourceDescription *)resource
+{
+    __block NTYAirDataServer *weakSelf = self;
+    
+    NSString *path = [NSString stringWithFormat:@"/%@.json", resource.name];
+    [self.server addHandlerForMethod:@"POST" path:path requestClass:[GCDWebServerURLEncodedFormRequest class] processBlock:^GCDWebServerResponse* (GCDWebServerRequest *request) {
+        GCDWebServerURLEncodedFormRequest *formRequest = (GCDWebServerURLEncodedFormRequest *)request;
+        
+        NSManagedObject *newObject = [NSEntityDescription insertNewObjectForEntityForName:resource.entityName inManagedObjectContext:weakSelf.managedObjectContext];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:resource.entityName inManagedObjectContext:weakSelf.managedObjectContext];
+        for (NSString *attributeName in entity.attributesByName.allKeys) {
+            NSString *value = formRequest.arguments[attributeName];
+            if (value == nil) {
+                continue;
+            } else if ([value isInteger]) {
+                [newObject setValue:[NSNumber numberWithInteger:value.integerValue] forKey:attributeName];
+            } else if ([value isFloat]) {
+                [newObject setValue:[NSNumber numberWithFloat:value.floatValue] forKey:attributeName];
+            } else if ([value isBoolean]) {
+                [newObject setValue:[NSNumber numberWithBool:value.boolValue] forKey:attributeName];
+            } else {
+                [newObject setValue:value forKey:attributeName];
+            }
+        }
+        
+        [weakSelf.managedObjectContext save:nil];
+        
+        return [GCDWebServerDataResponse responseWithJSONObject:@{}];
     }];
 }
 

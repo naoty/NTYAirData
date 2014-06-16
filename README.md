@@ -33,8 +33,6 @@ The server has RESTful APIs for data managed by Core Data. If your application h
 GET    /users.json               - get the collection of user objects
 GET    /users/:resource_key.json - get an user object identified by :resource_key
 POST   /users.json               - create a new user object
-PUT    /users/:resource_key.json - update an user object identified by :resource_key
-DELETE /users/:resource_key.json - destroy an user object identified by :resource_key
 ```
 
 The server will response data in the format of JSON like below.
